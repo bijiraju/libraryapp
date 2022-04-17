@@ -22,7 +22,8 @@ email=document.getElementById('email');
             }
 
             function pwdValidate(){
-                let exp=/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/;
+              
+                let exp=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
                     if(exp.test(pwd.value)){
                     // console.log("Valid");
                         pwdtext.innerHTML="Valid Password";
