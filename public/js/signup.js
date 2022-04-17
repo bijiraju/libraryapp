@@ -39,18 +39,18 @@ email=document.getElementById('email');
 
             function confirmValidate(){
                     if(pwd.value==confirmpwd.value){
-                    confirmtext.innerHTML="Match Found";
+                    confirmtext.innerHTML="Password Match";
                     confirmtext.style.color="green";
                     return true;
                     }
                     else{
-                    confirmtext.innerHTML="No Match Found";
+                    confirmtext.innerHTML="Passwords Doesnot Match";
                     confirmtext.style.color="red";
                     return false;
                     }
                 }
 
-                function Validate(){
+              function Validate(){
               if(emailValidate()&&pwdValidate()&&confirmValidate()){
                 
                 return true;
