@@ -17,7 +17,7 @@ addauthorRouter.use(multer({storage:imageStore}).single('image'));
 
 function router(nav){
     addauthorRouter.get('/',function(req,res){
-        res.render('addauthor',{
+        res.render('addAuthor',{
             nav,
             title:'Add Author'
         })
