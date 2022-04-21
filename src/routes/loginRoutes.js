@@ -17,17 +17,17 @@ function router(nav1){
     loginRouter.post('/add',function(req,res){
          var logindata={
              user:req.body.email,
-             pwd:req.body.password
+             password:req.body.password
          }
 
          var flag=false;
          Signupdata.find().then(function(data){
              for(var i=0;i<data.length;i++){
-                 if(logindata.user==data[i].email&&logindata.pwd==data[i].password){
+                 if(logindata.user==data[i].email&&logindata.password==data[i].spassword){
                     flag=true;
                     break;
                  }
-                 else if(logindata.user=='admin@gmail.com'&&logindata.pwd=='12345'){
+                 else if(logindata.user=='admin@gmail.com'&&logindata.password=='12345'){
                      console.log('admin login');
                      flag=true;
                     break;

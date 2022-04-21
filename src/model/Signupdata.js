@@ -10,7 +10,7 @@ const Schema=mongoose.Schema;
 const SignupSchema=new Schema({
     name:String,
     email:String,
-    password:String
+    spassword:String
 });
 
 // Model Creation

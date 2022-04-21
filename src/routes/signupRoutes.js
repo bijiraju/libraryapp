@@ -16,7 +16,7 @@ function router(nav1){
                     
                     user:req.body.user,
                     email:req.body.email,
-                    password:req.body.password,
+                    spassword:req.body.spassword,
                 }
                var newsignup=Signupdata(item);
                 newsignup.save();//saving to database

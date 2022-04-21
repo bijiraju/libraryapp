@@ -92,21 +92,24 @@
                   
                     <div class="wrapper">
                       <header>Log In</header>
-                        <form method="POST" action="/login/add" onsubmit="Validate();">
+                        <form method="POST" action="/login/add" onsubmit="return loginvalidate()">
                            <!-- Email input -->
                           <div class="field email mb-4">
                             <div class="input-area">
-                              <input type="text" name="email" id="email" class="form-control"  placeholder="E-mail" required>
-                              <label id="emailtext"></label>
+                              <input type="text" name="email" id="email" class="form-control"  placeholder="E-mail" required oninput="loginvalidate()">
+                                <label for="emailerror" id="emailerror"> </label>
                             </div>
                           </div>
                          
                            <!-- Password input -->
                           <div class="field password mb-1">
                             <div class="input-area">
-                              <input type="password" name="password" id="pwd" class="form-control" placeholder="Password" required>
-                              <label id="pwdtext"></label>
+                              <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
                             </div>
+                          </div>
+                          <div>
+                            <label class="passworderror" for="passworderror" id="passworderror"></label>
+
                           </div>
                                                    
                          <input type="submit" value="Login">
@@ -169,6 +172,6 @@
 	<!-- script references -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-        <script src="/js/login.js"></script>
+        <script src="/js/script.js"></script>
 	</body>
 </html>
