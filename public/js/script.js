@@ -3,8 +3,11 @@ var emailerror = document.getElementById("emailerror");
 var password = document.getElementById("password");
 var passworderror = document.getElementById("passworderror");
 
+
+
 var Regex = /^[a-zA-Z][a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}$/;
 var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
 
    
 function loginvalidate(){
@@ -67,20 +70,30 @@ function signupvalidate()
 
     var semailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    var unameRegex = /^[A-Za-z]+$/;
+
 
     //username validation
-    if ((uname.value)==null || (uname.value)=="")
-    {  
-        unameerror.innerHTML = 'User name cannot be blank';
-        unameerror.style.color="#FF0000";
-        uname.style.border = '2px solid #FF0000'; 
-        return false;  
-    } 
-    else{
+
+    if(uname.value.match(unameRegex)){
         unameerror.innerHTML = 'Valid';
         uname.style.border = '2px solid #07b510';
         unameerror.style.color="#07b510";
-    } 
+    }
+    else if ((uname.value)==null || (uname.value)=="")
+    {
+        unameerror.innerHTML = 'Name cannot be blank';
+        unameerror.style.color="#FF0000";
+        uname.style.border = '2px solid #FF0000'; 
+        return false; 
+    }
+    else{
+        unameerror.innerHTML = 'Enter Valid Name';
+        uname.style.border = '2px solid #FF0000';
+        unameerror.style.color="#FF0000";
+        return false;  
+    }
+
     //email validation 
     if(semail.value.match(semailRegex)){
         semailerror.innerHTML = 'Valid';
