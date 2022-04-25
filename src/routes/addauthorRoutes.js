@@ -22,6 +22,8 @@ function router(nav){
             title:'Add Author'
         })
     })
+
+    //to add new author data
     addauthorRouter.post('/add',function(req,res){
          var item={
                     
